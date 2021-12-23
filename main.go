@@ -13,6 +13,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to find interface %q: %v", "eth0", err)
 	}
+
+	const etherType = 0xcccc
 	c, err := raw.ListenPacket(ifi, etherType, nil)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
